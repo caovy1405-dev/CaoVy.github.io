@@ -1,0 +1,35 @@
+document.body.appendChild(input);
+    avatar.style.cursor = 'pointer';
+    avatar.title = 'Nhấp để thay avatar (tạm thời trên máy bạn)';
+    avatar.addEventListener('click', ()=> input.click());
+    input.addEventListener('change', (e)=>{
+      const f = e.target.files && e.target.files[0];
+      if(!f) return;
+      const reader = new FileReader();
+      reader.onload = function(ev){ avatar.src = ev.target.result; };
+      reader.readAsDataURL(f);
+    });
+  })();
+
+  // Sakura petals (simple)
+  (function(){
+    const container = document.getElementById('sakura');
+    function rand(min,max){ return Math.random()*(max-min)+min; }
+    function createPetal(){
+      const p = document.createElement('div');
+      p.className = 'petal';
+      const size = rand(10,22);
+      p.style.width = size + 'px';
+      p.style.height = size*0.85 + 'px';
+      p.style.left = rand(-5,105) + '%';
+      p.style.top = '-6%';
+      container.appendChild(p);
+
+      const duration = rand(6000,14000);
+      const start = Date.now();
+      const rot = rand(0,360);
+      function step(){
+        const t = (Date.now() - start)/duration;
+        if(t >= 1){ p.remove(); return; }
+        const y = t * 120; // percent
+        const sway = Ma
