@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function CaoNgoAnhVyProfile() {
-  const avatarUrl = "https://raw.githubusercontent.com/caovy1405-dev/CaoVy.github.io/refs/heads/main/c6d4f21bc780ca108b797d3ade345370.jpg?raw=1";
+const avatarUrl = "https://raw.githubusercontent.com/caovy1405-dev/CaoVy.github.io/main/c6d4f21bc780ca108b797d3ade345370.jpg";
 
   const hobbies = ["Hát", "Vẽ", "Du lịch"];
   const strengths = [
